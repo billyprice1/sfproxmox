@@ -78,6 +78,13 @@ class OpenvzDetail
     private $ipAddress;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="netid", type="string", length=255)
+     */
+    private $netif;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="quotaugidlimit", type="bigint")
@@ -285,7 +292,7 @@ class OpenvzDetail
     /**
      * Set swap
      *
-     * @param boolean $swap
+     * @param bigint $swap
      * @return OpenvzDetail
      */
     public function setSwap($swap)
@@ -298,11 +305,34 @@ class OpenvzDetail
     /**
      * Get swap
      *
-     * @return boolean 
+     * @return bigint 
      */
     public function getSwap()
     {
         return $this->swap;
+    }
+
+    /**
+     * Set netif
+     *
+     * @param string $swap
+     * @return OpenvzDetail
+     */
+    public function setNetif($netif)
+    {
+        $this->netif = $netif;
+
+        return $this;
+    }
+
+    /**
+     * Get swap
+     *
+     * @return string 
+     */
+    public function getNetif()
+    {
+        return $this->netif;
     }
 
     /**

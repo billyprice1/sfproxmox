@@ -2,7 +2,7 @@
 
 {% block body %}
 <h2>Liste des containers</h2>
-<h3><a href="/newvz">Nouveau</a></h3>
+<h3><a href="/openvz/new">Nouveau</a></h3>
 <ul>
 {% for valeur in data %} 
     <ul><h3>Node <a href="openvz/{{ valeur.vmid }}">{{ valeur.name }}</a></h3>
