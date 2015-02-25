@@ -4,7 +4,6 @@ namespace HB\Bundle\ProxMoxBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use HB\Bundle\ProxMoxBundle\Service\ProxMoxService;
 
 class DefaultController extends Controller
 {
@@ -14,8 +13,9 @@ class DefaultController extends Controller
      * @Template()
      */
     public function indexAction(){
-        $mox = new ProxMoxService();
-        //$proxmox = $this->container->get("hb_prox_mox.service");
+        //$mox = new ProxMoxService();
+        
+        $mox = $this->container->get("hb_prox_mox.service");
         $listenodes = $mox->get('/nodes');
         return $listenodes;
     }
@@ -25,7 +25,7 @@ class DefaultController extends Controller
      * @Template()
      */
     public function openvzlistAction(){
-        $mox = new ProxMoxService();
+        $mox = $this->container->get("hb_prox_mox.service");
         //$proxmox = $this->container->get("hb_prox_mox.service");
         $listenodes = $mox->get('nodes/proxmox1/openvz');
         return $listenodes;
@@ -36,7 +36,7 @@ class DefaultController extends Controller
      * @Template()
      */
     public function openvzAction($id){
-        $mox = new ProxMoxService();
+        $mox = $this->container->get("hb_prox_mox.service");
         //$proxmox = $this->container->get("hb_prox_mox.service");
         
         $listenodes = $mox->get('nodes/proxmox1/openvz');
@@ -50,5 +50,19 @@ class DefaultController extends Controller
         }
         //$details['baseconfig'] = $listenodes['data'][$id.""];
         return $details;
+    }
+    /**
+     * 
+     * @Route("/openvz/new")
+     * @Template()
+     */
+    public function openvzAddAction($id){
+        $mox = $this->container->get("hb_prox_mox.service");
+        //$proxmox = $this->container->get("hb_prox_mox.service");
+        
+        //$listenodes = $mox->put('nodes/proxmox1/openvz');
+        
+        //$details['baseconfig'] = $listenodes['data'][$id.""];
+        //return $details;
     }
 }
