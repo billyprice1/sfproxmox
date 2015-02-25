@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h2>Détail du node {{ vmid }}</h2>
+<ul>
+{% for key,valeur in baseconfig %} 
+        <li>{{ key }} : {{ valeur }}</li>
+{% endfor %}
+{% for key,valeur in data %} 
+        <li>{{ key }} : {{ valeur }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
