@@ -1,0 +1,31 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h2>Liste des nodes</h2>
+<ul>
+{% for valeur in data %} 
+    <ul><h3>Node {{ valeur.name }}</h3>
+        <li>maxswap : {{ valeur.maxswap }}</li>
+        <li>disk : {{ valeur.disk }}</li>
+        <li>ip : {{ valeur.ip }}</li>
+        <li>status : {{ valeur.status }}</li>
+        <li>netout : {{ valeur.netout }}</li>
+        <li>maxdisk : {{ valeur.maxdisk }}</li>
+        <li>maxmem : {{ valeur.maxmem }}</li>
+        <li>uptime : {{ valeur.uptime }}</li>
+        <li>swap : {{ valeur.swap }}</li>
+        <li>vmid : {{ valeur.vmid }}</li>
+        <li>nproc : {{ valeur.nproc }}</li>
+        <li>diskread : {{ valeur.diskread }}</li>
+        <li>cpu : {{ valeur.cpu }}</li>
+        <li>name : {{ valeur.name }}</li>
+        <li>failcnt : {{ valeur.failcnt }}</li>
+        <li>diskwrite : {{ valeur.diskwrite }}</li>
+        <li>mem : {{ valeur.mem }}</li>
+        <li>type : {{ valeur.type }}</li>
+        <li>cpus : {{ valeur.cpus }}</li>
+    </ul>
+{% endfor %}
+</ul>
+
+{% endblock %}

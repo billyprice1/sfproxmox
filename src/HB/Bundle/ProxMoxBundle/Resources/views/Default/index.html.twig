@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+<h2>Liste des CT</h2>
+<ul>
+{% for valeur in data %} 
+    <li>disk : {{ valeur.disk }}</li>
+    <li>cpu : {{ valeur.cpu }}</li>
+    <li>maxdisk : {{ valeur.maxdisk }}</li>
+    <li>maxmem : {{ valeur.maxmem }}</li>
+    <li>node : {{ valeur.node }}</li>
+    <li>maxcpu : {{ valeur.maxcpu }}</li>
+    <li>level : {{ valeur.level }}</li>
+    <li>uptime : {{ valeur.uptime }}</li>
+    <li>id : {{ valeur.id }}</li>
+    <li>type : {{ valeur.type }}</li>
+    <li>mem : {{ valeur.mem }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
